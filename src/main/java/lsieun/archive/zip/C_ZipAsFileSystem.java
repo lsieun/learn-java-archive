@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ZipAsFileSystem {
+public class C_ZipAsFileSystem {
     public static void main(String[] args) throws IOException {
         // Construct the URI pointing to the ZIP archive
         // Windows

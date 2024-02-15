@@ -5,7 +5,7 @@ import java.util.zip.Deflater;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class ZipUtility {
+public class A_Zip {
     public static void main(String[] args) {
         // We want to create a ziptest.zip file in the current directory.
         // We want to add two files to this zip file.
@@ -20,8 +20,11 @@ public class ZipUtility {
     public static void zip(String zipFileName, String[] zipEntries) {
         // Get the current directory for later use
         String currentDirectory = System.getProperty("user.dir");
-        try (ZipOutputStream zos = new ZipOutputStream(
-                new BufferedOutputStream(new FileOutputStream(zipFileName)))) {
+        try (
+                ZipOutputStream zos = new ZipOutputStream(
+                        new BufferedOutputStream(new FileOutputStream(zipFileName))
+                )
+        ) {
             // Set the compression level to best compression
             zos.setLevel(Deflater.BEST_COMPRESSION);
 

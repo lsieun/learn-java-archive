@@ -4,32 +4,34 @@ import java.io.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class UnzipUtility {
+public class B_Unzip {
     public static void main(String[] args) {
         String zipFileName = "ziptest.zip";
         String unzipdirectory = "extracted";
         unzip(zipFileName, unzipdirectory);
     }
 
-    public static void unzip(String zipFileName, String unzipdir) {
-        try (ZipInputStream zis = new ZipInputStream(
-                new BufferedInputStream(
-                        new FileInputStream(zipFileName)))) {
+    public static void unzip(String zipFileName, String unzipDir) {
+        try (
+                ZipInputStream zis = new ZipInputStream(
+                        new BufferedInputStream(new FileInputStream(zipFileName))
+                )
+        ) {
             // Read each entry from the ZIP file
             ZipEntry entry;
             while ((entry = zis.getNextEntry()) != null) {
                 // Extract the entry's contents
-                extractEntryContent(zis, entry, unzipdir);
+                extractEntryContent(zis, entry, unzipDir);
             }
-            System.out.println("ZIP file's contents have been extracted to " + (new File(unzipdir)).getAbsolutePath());
+            System.out.println("ZIP file's contents have been extracted to " + (new File(unzipDir)).getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void extractEntryContent(ZipInputStream zis, ZipEntry entry, String unzipdir) throws IOException {
+    public static void extractEntryContent(ZipInputStream zis, ZipEntry entry, String unzipDir) throws IOException {
         String entryFileName = entry.getName();
-        String entryPath = unzipdir + File.separator + entryFileName;
+        String entryPath = unzipDir + File.separator + entryFileName;
 
         // Create the entry file by creating necessary directories
         createFile(entryPath);

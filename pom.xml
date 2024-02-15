@@ -22,6 +22,25 @@
             <artifactId>lsieun-utils</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- Zip4j - A Java library for zip files and streams -->
+        <dependency>
+            <groupId>net.lingala.zip4j</groupId>
+            <artifactId>zip4j</artifactId>
+            <version>2.11.5</version>
+        </dependency>
+
+        <!-- 7-Zip-JBinding is a free cross-platform java binding of 7-Zip free compress/decompress library -->
+        <dependency>
+            <groupId>net.sf.sevenzipjbinding</groupId>
+            <artifactId>sevenzipjbinding</artifactId>
+            <version>16.02-2.01</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.sevenzipjbinding</groupId>
+            <artifactId>sevenzipjbinding-all-platforms</artifactId>
+            <version>16.02-2.01</version>
+        </dependency>
     </dependencies>
 
 </project>
