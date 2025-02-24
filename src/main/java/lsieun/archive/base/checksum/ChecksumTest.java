@@ -1,4 +1,4 @@
-package lsieun.archive.checksum;
+package lsieun.archive.base.checksum;
 
 import java.nio.charset.StandardCharsets;
 import java.util.zip.Adler32;

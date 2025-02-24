@@ -1,4 +1,4 @@
-package lsieun.archive.compress;
+package lsieun.archive.base.compress;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;

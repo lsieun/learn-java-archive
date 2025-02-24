@@ -1,4 +1,4 @@
-package lsieun.archive.zip;
+package lsieun.archive.theme.zip;
 
 import java.io.*;
 import java.util.zip.Deflater;

@@ -1,4 +1,4 @@
-package lsieun.archive.zip4j;
+package lsieun.archive.theme.zip4j;
 
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.model.ZipParameters;
@@ -7,21 +7,16 @@ import net.lingala.zip4j.model.enums.EncryptionMethod;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 
-public class ZipPassword_B_Zip_Multiple_File {
+public class ZipPassword_D_Split_Zip_File {
     public static void main(String[] args) throws IOException {
         ZipParameters zipParameters = new ZipParameters();
         zipParameters.setEncryptFiles(true);
         zipParameters.setEncryptionMethod(EncryptionMethod.AES);
 
-        List<File> filesToAdd = Arrays.asList(
-                new File("aFile.txt"),
-                new File("bFile.txt")
-        );
-
         ZipFile zipFile = new ZipFile("compressed.zip", "password".toCharArray());
-        zipFile.addFiles(filesToAdd, zipParameters);
+        int splitLength = 1024 * 1024 * 10; //10MB
+        zipFile.createSplitZipFile(Arrays.asList(new File("E:\\Software\\MySQL\\mysql-8.2.0-winx64.7z")), zipParameters, true, splitLength);
         zipFile.close();
     }
 }

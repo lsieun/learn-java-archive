@@ -1,4 +1,4 @@
-package lsieun.archive.compress;
+package lsieun.archive.base.compress;
 
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
